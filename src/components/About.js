@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import aboutImg from "../assets/img/about.jpg"; // Replace with your actual image path
+import aboutImg from "../assets/img/about2.jpg"; // Replace with your actual image path
 
 
 export const About = () => {
