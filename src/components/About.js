@@ -28,9 +28,10 @@ export const About = () => {
                   I enjoy problem-solving and continuously improving my skills. When I'm not coding,
                   you can find me exploring new technologies, reading books, or contributing to open-source projects.
                 </p>
-                <button className="btn btn-primary" onClick={() => console.log("Download Resume")}>
-                  Download Resume
+                <button className="btn btn-primary" onClick={() => window.open(process.env.PUBLIC_URL + "/Resume.pdf", "_blank")}>
+                  View Resume
                 </button>
+
               </div>
             </Col>
           </div>

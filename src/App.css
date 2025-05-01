@@ -220,6 +220,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
 
+
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
@@ -731,7 +732,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .scroll-item {
   flex: 0 0 45%;
   height: 250px;
-  width: 110px;
+  width: 310px;
   background-color: rgb(0, 0, 0);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -748,9 +749,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .cert-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 250px;
+  object-fit: contain;
   border-radius: 10px;
+  background-color: rgb(17, 41, 73);
 }
 
 .cert-text {
@@ -763,6 +765,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   opacity: 0;
   transition: opacity 0.3s ease;
   width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
 }
 
 .scroll-item:hover .cert-text {
@@ -772,15 +784,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .cert-text h4 {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  padding: 0 10px;
 }
 
 .cert-text p {
-  font-size: 1.2rem;  /* Increased font size */
-  color: white;       /* Set text color to white */
-  margin-top: 10px;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  color: white;
+  margin: 10px 0;
+  padding: 0 10px;
+  word-break: break-word;
 }
-
 
 .cert-imgbx {
   position: relative;
@@ -788,6 +801,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   overflow: hidden;
   margin-bottom: 20px;
   transition: 0.3s ease-in-out;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
 }
 
 .cert-imgbx::before {
@@ -795,49 +811,61 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   opacity: 0.85;
   position: absolute;
-  width: 100%; /* Ensure it spans the full width */
+  width: 100%;
   height: 0;
   transition: 0.4s ease-in-out;
+  z-index: 1;
 }
 
 .cert-imgbx:hover::before {
-  height: 228px;
+  height: 100%;
   border-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 .cert-imgbx .cert-text {
-  position: absolute;
-  bottom: 0;
-  left: 350;
-  right: 0;
-  color: white;
+  z-index: 2;
   padding: 20px;
-  opacity: 0;
-  transition: 0.3s ease-in-out;
-  
-  /* Flexbox centering */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100%;
-}
-
-.cert-imgbx:hover .cert-text {
-  opacity: 1;
+  box-sizing: border-box;
 }
 
 .cert-imgbx .cert-text h4 {
-  margin: 0;
   font-size: 18px;
   font-weight: bold;
 }
 
 .cert-imgbx .cert-text p {
   font-size: 14px;
-  opacity: 0.8;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cert-text h4 {
+    font-size: 1rem;
+  }
+
+  .cert-text p {
+    font-size: 0.9rem;
+  }
+
+  .cert-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cert-image {
+    height: 180px;
+  }
+
+  .cert-text {
+    padding: 8px;
+  }
+
+  .cert-text h4,
+  .cert-text p {
+    font-size: 0.85rem;
+  }
 }
 
 
